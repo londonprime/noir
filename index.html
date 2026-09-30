@@ -141,6 +141,253 @@ footer a.tg:active{transform:translateY(4px);box-shadow:inset 0 1px 0 rgba(255,2
 #cur{position:fixed;width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;z-index:200;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s;display:none}
 #cur.h{width:64px;height:64px;background:rgba(184,154,94,.12)}
 @media(hover:hover) and (pointer:fine){#cur{display:block}}
+@media(prefers-reduced-motion:reduce){.tower,.pin{animation:none!important}}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<header id="hd">
+  <a href="#top" class="logo">NOIR HOTEL</a>
+  <nav><a href="#nomera">НОМЕРА</a><a href="#restoran">РЕСТОРАН</a><a href="#spa">SPA И WELLNESS</a><a href="#galereya">ГАЛЕРЕЯ</a><a href="#ob-otele">ОБ ОТЕЛЕ</a><a href="#kontakty">КОНТАКТЫ</a></nav>
+  <a href="#bron" class="btn hbtn">ЗАБРОНИРОВАТЬ</a>
+  <button class="burger" id="bg" aria-label="Меню"><i></i><i></i></button>
+</header>
+<div class="mob" id="mob"><a href="#nomera">Номера</a><a href="#restoran">Ресторан</a><a href="#spa">SPA и wellness</a><a href="#galereya">Галерея</a><a href="#ob-otele">Об отеле</a><a href="#kontakty">Контакты</a><a href="#bron" class="btn g" style="font-family:var(--sans);font-size:12px;text-align:center">ЗАБРОНИРОВАТЬ</a></div>
+
+<main id="top">
+<div class="hero">
+  <div class="tower b"></div><div class="tower"></div>
+  <div class="in">
+    <span class="lbl">NOIR HOTEL</span>
+    <h1><span><b>ОСТАНОВИТЕСЬ</b></span><span><b>В МОМЕНТЕ.</b></span></h1>
+    <p>Премиальный отдых, созданный для тишины, комфорта и незабываемых впечатлений.</p>
+    <div class="cta"><a href="#bron" class="btn g">ЗАБРОНИРОВАТЬ НОМЕР</a><a href="#nomera" class="btn">ПОСМОТРЕТЬ НОМЕРА</a></div>
+  </div>
+  <div class="scroll">ПРОКРУТИТЕ ВНИЗ ↓</div>
+</div>
+
+<section class="book" id="bron"><div class="wrap">
+  <div class="bar">
+    <label>ЗАЕЗД<input type="date" id="d1"></label>
+    <label>ВЫЕЗД<input type="date" id="d2"></label>
+    <label>ГОСТИ<select id="gs"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
+    <label>ТИП НОМЕРА<select id="tp"><option value="all">Любой</option></select></label>
+    <button class="btn" id="chk">ПРОВЕРИТЬ ДОСТУПНОСТЬ</button>
+  </div>
+  <div id="res"></div>
+</div></section>
+
+<section id="nomera"><div class="wrap">
+  <span class="lbl">НОМЕРА</span>
+  <h2 class="rv">ВАШЕ ПРОСТРАНСТВО.<br>ВАШ ОТДЫХ.</h2>
+  <div class="rooms" id="rooms"></div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="lbl">ОТДЫХ И ВПЕЧАТЛЕНИЯ</span>
+  <h2 class="rv">БОЛЬШЕ, ЧЕМ<br>ПРОСТО ОТЕЛЬ.</h2>
+  <div class="exp">
+    <div class="ph s1"><h3>SPA</h3></div><div class="ph s5"><h3>БАССЕЙН</h3></div><div class="ph s6"><h3>РЕСТОРАН</h3></div><div class="ph s2"><h3>ФИТНЕС</h3></div><div class="ph s4"><h3>ROOFTOP</h3></div>
+  </div>
+</div></section>
+
+<section id="restoran"><div class="wrap split">
+  <div class="ph s6 rv"><em>Зал ресторана, вечер</em></div>
+  <div class="rv">
+    <span class="lbl">NOIR RESTAURANT</span>
+    <h2>ВКУС, КОТОРЫЙ<br>ЗАПОМИНАЕТСЯ.</h2>
+    <p style="margin-top:26px">Современная кухня, тщательно подобранные ингредиенты и атмосфера для особенных вечеров.</p>
+    <div class="menu"><div><span>Тартар из говядины, трюфель, желток</span><b>1 850 ₽</b></div><div><span>Морской гребешок, цветная капуста, лайм</span><b>2 400 ₽</b></div><div><span>Утиная грудка, вишня, чёрный чеснок</span><b>3 200 ₽</b></div><div><span>Шоколад, солёная карамель, золото</span><b>990 ₽</b></div></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn" id="mnu">ПОСМОТРЕТЬ МЕНЮ</button><button class="btn g" id="tbl">ЗАБРОНИРОВАТЬ СТОЛИК</button></div>
+  </div>
+</div></section>
+
+<section id="spa" style="background:var(--panel)"><div class="wrap split">
+  <div class="rv">
+    <span class="lbl">SPA И WELLNESS</span>
+    <h2>НАЙДИТЕ<br>СВОЮ ТИШИНУ.</h2>
+    <p style="margin-top:26px">Закрытый бассейн с подсветкой, сауна на камнях, авторские массажи и зал с видом на ночной город. Всё, чтобы день закончился медленно.</p>
+    <div class="tags"><span>SPA</span><span>Бассейн</span><span>Сауна</span><span>Массаж</span><span>Фитнес-зал</span></div>
+  </div>
+  <div class="ph s5 rv"><em>Бассейн, 24 м</em></div>
+</div></section>
+
+<section id="galereya"><div class="wrap">
+  <span class="lbl">ГАЛЕРЕЯ</span><h2 class="rv">ОТЕЛЬ В КАДРЕ.</h2>
+  <div class="gal" id="gal"></div>
+</div></section>
+
+<section id="ob-otele"><div class="wrap">
+  <span class="lbl">ОБ ОТЕЛЕ</span>
+  <h2 class="rv">СОЗДАН ДЛЯ<br>НЕЗАБЫВАЕМОГО ОТДЫХА.</h2>
+  <p class="rv" style="max-width:640px;margin-top:30px;color:#b9b9bd">NOIR HOTEL открылся в 2018 году в здании бывшей типографии на Блэк-авеню. Архитекторы сохранили кирпич и высокие потолки, добавили стекло, тёмный камень и свет, который меняется вместе с городом. Сегодня это дом для тех, кто ценит тишину и внимание к деталям.</p>
+  <div class="stats"><div><b>120</b><span>НОМЕРОВ</span></div><div><b>3</b><span>РЕСТОРАНА</span></div><div><b>24/7</b><span>СЕРВИС</span></div><div><b>2018</b><span>ГОД ОТКРЫТИЯ</span></div></div>
+</div></section>
+
+<section style="background:var(--panel)"><div class="wrap">
+  <span class="lbl" style="text-align:center">ОТЗЫВЫ</span><h2 style="text-align:center">ГОСТИ О NOIR HOTEL</h2>
+  <div class="rev"><div class="st" id="rs"></div><q id="rt"></q><p id="rn"></p></div>
+  <div class="arr"><button id="pv" aria-label="Предыдущий отзыв">←</button><button id="nx" aria-label="Следующий отзыв">→</button></div>
+</div></section>
+
+<section id="kontakty"><div class="wrap">
+  <span class="lbl">РАСПОЛОЖЕНИЕ</span><h2 class="rv">МЫ ЖДЁМ ВАС.</h2>
+  <div class="map"><svg viewBox="0 0 800 420" preserveAspectRatio="xMidYMid slice"><g stroke="#2a2b30" fill="none" stroke-width="1.4"><path d="M0 300 C200 260 320 340 520 250 S720 190 800 210" stroke="#3a3a42" stroke-width="22" opacity=".5"/><path d="M80 0 L160 420M260 0 L330 420M430 0 L470 420M560 0 L650 420M700 0 L740 420"/><path d="M0 90 L800 130M0 180 L800 160M0 370 L800 330"/><path d="M430 193 L700 193" stroke="#b89a5e" stroke-width="2"/></g></svg><div class="pin"></div></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap"><address style="font-style:normal;font-size:18px">NOIR HOTEL<br>12 Black Avenue<br>Лондон, Великобритания</address>
+  <a class="btn g" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=12+Black+Avenue+London">ПОСТРОИТЬ МАРШРУТ</a></div>
+</div></section>
+
+<section class="fin"><h2 class="rv">ВАШ НОМЕР<br>ЖДЁТ ВАС.</h2><p>Забронируйте свой следующий отдых в NOIR HOTEL.</p><a href="#bron" class="btn g">ЗАБРОНИРОВАТЬ НОМЕР</a></section>
+</main>
+
+<footer><div class="wrap"><div><div class="logo" style="color:var(--tx);margin-bottom:10px">NOIR HOTEL</div>© 2026 NOIR HOTEL</div>
+<a class="tg" href="https://t.me/rozovoye" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.6c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13 1.8 11.500c-1-.3-1-1 .2-1.500L20.300 2.900c.9-.3 1.600.2 1.600 1.400z"/></svg>НАПИСАТЬ В TELEGRAM</a></div>
+</footer>
+
+<button class="cbtn" id="cb"></button>
+<div class="md" id="md"><div class="dlg" id="dlg"></div></div>
+
+<script>
+const R=[
+{id:0,n:'НОМЕР NOIR',s:32,g:2,p:18900,bed:'Большая двуспальная кровать',v:'Вид на город',am:['Большая двуспальная кровать','Вид на город'],c:'s2',d:'Тёмное дерево, мягкий свет и тишина, за которой начинается город. Для короткого и спокойного отдыха.'},
+{id:1,n:'НОМЕР DELUXE',s:45,g:2,p:26500,bed:'Большая кровать King size',v:'Панорамные окна',am:['Большая кровать','Панорамные окна'],c:'s1',d:'Просторный номер с окнами от пола до потолка: утром город у ваших ног, вечером он светится.'},
+{id:2,n:'NOIR SUITE',s:68,g:3,p:39800,bed:'Спальня и гостиная',v:'Панорамный вид',am:['Спальня и гостиная','Панорамный вид'],c:'s3',d:'Два пространства: спальня для сна и гостиная для встреч. Тёмный камень, латунь и мягкий текстиль.'},
+{id:3,n:'ПРЕЗИДЕНТСКИЙ ЛЮКС',s:120,g:4,p:84000,bed:'Две спальни и гостиная',v:'Панорамный вид на город',am:['Отдельная гостиная','Терраса','Панорамный вид на город'],c:'s4',d:'Верхний этаж, собственная терраса и отдельная гостиная. Главный адрес NOIR HOTEL.'}];
+const $=s=>document.querySelector(s),fmt=n=>n.toLocaleString('ru-RU')+' ₽';
+const nm=(n,a)=>n+' '+(n%10==1&&n%100!=11?a[0]:(n%10>1&&n%10<5&&(n%100<10||n%100>20)?a[1]:a[2]));
+const md=$('#md'),dlg=$('#dlg');
+function open(h,cls){dlg.innerHTML='<button class="x" aria-label="Закрыть">✕</button>'+h;md.className='md o '+(cls||'');dlg.querySelector('.x').onclick=close;document.body.style.overflow='hidden'}
+function close(){md.className='md';document.body.style.overflow=''}
+md.onclick=e=>{if(e.target===md)close()};addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+// rooms
+$('#tp').innerHTML+=R.map(r=>`<option value="${r.id}">${r.n}</option>`).join('');
+$('#rooms').innerHTML=R.map(r=>`<article class="card rv" data-r="${r.id}"><div class="box"><div class="ph ${r.c}" style="aspect-ratio:4/3"><em>${r.n}</em></div></div><h3>${r.n}</h3>
+<ul><li>${r.s} м²</li><li>${nm(r.g,['гость','гостя','гостей'])}</li>${r.am.map(a=>`<li>${a}</li>`).join('')}</ul>
+<div class="row"><span><b>${fmt(r.p)}</b> <small style="color:var(--mut)">/ ночь</small></span><span class="lnk">ПОСМОТРЕТЬ НОМЕР</span></div></article>`).join('');
+document.querySelectorAll('.card').forEach(c=>c.onclick=()=>room(R[c.dataset.r]));
+function room(r){open(`<div class="pics"><div class="ph ${r.c}"></div><div class="ph s3"></div><div class="ph s5"></div></div>
+<div class="bd"><div><span class="lbl">${r.s} м² · ${nm(r.g,['гость','гостя','гостей'])}</span><h3>${r.n}</h3><p style="color:#b9b9bd">${r.d}</p><div class="pp">от ${fmt(r.p)} / ночь</div><button class="btn g" id="rb">ЗАБРОНИРОВАТЬ НОМЕР</button></div>
+<ul class="am"><li>Площадь<span>${r.s} м²</span></li><li>Гостей<span>до ${r.g}</span></li><li>Кровать<span>${r.bed}</span></li><li>Вид из окна<span>${r.v}</span></li><li>Wi-Fi<span>бесплатно</span></li><li>Мини-бар<span>есть</span></li><li>Ванная<span>мрамор, ванна и душ</span></li><li>Телевизор<span>4K, Smart TV</span></li><li>Кондиционер<span>индивидуальный</span></li></ul></div>`);
+$('#rb').onclick=()=>{close();$('#tp').value=r.id;location.hash='#bron'}}
+// dates
+const iso=d=>d.toISOString().slice(0,10),t0=new Date();
+$('#d1').min=iso(t0);$('#d1').value=iso(new Date(+t0+864e5));$('#d2').value=iso(new Date(+t0+3*864e5));
+$('#d1').onchange=()=>{const a=new Date($('#d1').value);$('#d2').min=iso(new Date(+a+864e5));if($('#d2').value<=$('#d1').value)$('#d2').value=iso(new Date(+a+864e5))};$('#d2').min=iso(new Date(+t0+2*864e5));
+let sel={};
+$('#chk').onclick=()=>{const a=$('#d1').value,b=$('#d2').value,n=Math.round((new Date(b)-new Date(a))/864e5),g=+$('#gs').value,t=$('#tp').value,res=$('#res');
+if(!a||!b||n<1){res.innerHTML='<div class="note">Выберите дату заезда и дату выезда: выезд должен быть позже заезда.</div>';return}
+const list=R.filter(r=>r.g>=g&&(t==='all'||r.id==t));
+res.innerHTML=list.length?`<p style="color:var(--mut)">Доступно на ${nm(n,['ночь','ночи','ночей'])}, ${nm(g,['гость','гостя','гостей'])}:</p>`+list.map(r=>`<div class="opt"><div class="ph ${r.c}"></div><div><h3>${r.n}</h3><small>${r.s} м² · до ${r.g} гостей · ${r.v}</small></div><div class="pr"><small>${n} × ${fmt(r.p)}</small><b>${fmt(n*r.p)}</b><button class="btn g" data-s="${r.id}" style="margin-top:8px;padding:12px 22px">ВЫБРАТЬ</button></div></div>`).join(''):'<div class="note">На выбранные параметры нет свободных номеров. Уменьшите число гостей или выберите другой тип номера.</div>';
+res.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{sel={r:R[b.dataset.s],a,b:b_=b,n,g};sel.b=$('#d2').value;checkout()});res.scrollIntoView({behavior:'smooth',block:'start'})};
+const df=s=>new Date(s).toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});
+function checkout(){const{r,a,b,n,g}=sel;open(`<div style="padding:clamp(24px,4vw,48px)"><span class="lbl">ОФОРМЛЕНИЕ</span><h3 style="font-size:40px">${r.n}</h3>
+<div class="sum"><div><span>Заезд</span><span>${df(a)}</span></div><div><span>Выезд</span><span>${df(b)}</span></div><div><span>Гости</span><span>${g}</span></div><div><span>${nm(n,['ночь','ночи','ночей'])} × ${fmt(r.p)}</span><span></span></div><div class="t"><span>ИТОГО</span><span>${fmt(n*r.p)}</span></div></div>
+<div class="fm"><input id="fn" placeholder="ИМЯ И ФАМИЛИЯ" autocomplete="name"><input id="fe" type="email" placeholder="EMAIL" autocomplete="email"><input id="fp" type="tel" placeholder="НОМЕР ТЕЛЕФОНА" autocomplete="tel"></div><div class="err" id="er"></div>
+<button class="btn g" id="cf" style="width:100%">ПОДТВЕРДИТЬ БРОНИРОВАНИЕ</button><p style="font-size:12px;color:var(--mut)">Демонстрационное бронирование: оплата не требуется.</p></div>`);
+$('#cf').onclick=()=>{const v=id=>$(id).value.trim(),e=$('#er');
+if(v('#fn').split(/\s+/).length<2)return e.textContent='Укажите имя и фамилию.';
+if(!/^\S+@\S+\.\S+$/.test(v('#fe')))return e.textContent='Введите корректный email, например name@mail.ru.';
+if(v('#fp').replace(/\D/g,'').length<10)return e.textContent='Введите номер телефона, не меньше 10 цифр.';
+open(`<div class="ok"><span class="lbl">NOIR HOTEL</span><h3>БРОНИРОВАНИЕ ПОДТВЕРЖДЕНО</h3><p style="color:var(--mut);margin:18px 0 0">Ваш номер бронирования:</p><div class="no">NR-2048</div>
+<div class="sum" style="text-align:left"><div><span>Номер</span><span>${r.n}</span></div><div><span>Даты</span><span>${df(a)} — ${df(b)}</span></div><div class="t"><span>ИТОГО</span><span>${fmt(n*r.p)}</span></div></div><button class="btn" id="ck">ЗАКРЫТЬ</button></div>`);$('#ck').onclick=close}}
+// gallery
+const G=[['s1','Номер'],['s2','Интерьер'],['s5','Бассейн'],['s6','Ресторан'],['s3','Фасад'],['s4','Rooftop'],['s5','SPA']];
+$('#gal').innerHTML=G.map((g,i)=>`<div class="ph ${g[0]}" data-i="${i}" role="button" tabindex="0" aria-label="${g[1]}"><em>${g[1]}</em></div>`).join('');
+document.querySelectorAll('#gal .ph').forEach(p=>{const f=()=>{const g=G[p.dataset.i];open(`<div class="ph big ${g[0]}"><em style="font-size:22px">${g[1]}</em></div>`,'lb')};p.onclick=f;p.onkeydown=e=>e.key==='Enter'&&f()});
+// reviews
+const V=[['Анна Соколова','Москва','Тихий, красивый и очень внимательный отель. Номер с панорамой стоил каждого рубля, а завтрак на террасе запомнился надолго.',5],['Михаил Орлов','Санкт-Петербург','Останавливался по работе, остался ради spa. Персонал помнит мелочи, бассейн вечером просто волшебный.',5],['Елена Краус','Берлин','Минимализм без холода. Ужин в NOIR RESTAURANT был лучшим за всю поездку в Лондон.',5],['Дмитрий Власов','Казань','Отличный сервис и шумоизоляция. Хотелось бы больше вариантов завтрака, но это мелочь.',4]];
+let vi=0;const sh=d=>{vi=(vi+d+V.length)%V.length;const v=V[vi],q=$('#rt');q.style.opacity=0;setTimeout(()=>{q.textContent='«'+v[2]+'»';$('#rn').textContent=v[0]+', '+v[1];$('#rs').textContent='★'.repeat(v[3])+'☆'.repeat(5-v[3]);q.style.opacity=1},250)};
+$('#pv').onclick=()=>sh(-1);$('#nx').onclick=()=>sh(1);sh(0);setInterval(()=>sh(1),9000);
+// misc
+const D=[['Закуски','Тартар из говядины, трюфель, желток',1850],['Закуски','Морской гребешок, цветная капуста, лайм',2400],['Закуски','Буррата, томаты, базилик',1600],['Основные блюда','Утиная грудка, вишня, чёрный чеснок',3200],['Основные блюда','Стейк рибай, перечный соус',4800],['Основные блюда','Сибас, фенхель, шафран',3600],['Десерты','Шоколад, солёная карамель, золото',990],['Десерты','Крем-брюле, ваниль',750],['Напитки','Бокал шампанского',1400],['Напитки','Чай NOIR, чайник',600]];
+let C={},T=null;
+const cnt=()=>Object.values(C).reduce((a,b)=>a+b,0),tot=()=>Object.entries(C).reduce((a,[i,q])=>a+D[i][2]*q,0),esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])),dg=v=>v.replace(/\D/g,'');
+function upd(){const b=$('#cb');b.style.display=cnt()?'block':'none';b.textContent='КОРЗИНА · '+cnt()+' · '+fmt(tot())}
+$('#cb').onclick=()=>rest('cart');$('#mnu').onclick=()=>rest('menu');$('#tbl').onclick=()=>rest('table');
+function rest(t){const tb=[['menu','МЕНЮ'],['table','СТОЛИК'],['cart','КОРЗИНА'+(cnt()?' ('+cnt()+')':'')]];
+open(`<div class="tabs">${tb.map(x=>`<button data-t="${x[0]}" class="${x[0]==t?'a':''}">${x[1]}</button>`).join('')}</div><div class="rb" id="rb">${V_[t]()}</div>`);wire(t)}
+function wire(t){dlg.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>rest(b.dataset.t));
+dlg.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{const i=b.dataset.q;C[i]=Math.max(0,(C[i]||0)+ +b.dataset.d);if(!C[i])delete C[i];upd();if(t=='cart')return rest('cart');$('#q'+i).textContent=C[i]||0;$('#mt').textContent=cnt()?'Итого: '+fmt(tot()):'Выберите блюда'});
+const g=id=>$(id);if(g('#tc'))g('#tc').onclick=tconf;if(g('#pay'))g('#pay').onclick=()=>T?payv():rest('table')||($('#te')&&0)}
+const V_={
+menu(){let c='',h='';D.forEach((d,i)=>{if(d[0]!=c){c=d[0];h+=`<h4>${c}</h4>`}h+=`<div class="dish"><span>${d[1]}</span><b>${fmt(d[2])}</b><span class="qty"><button data-q="${i}" data-d="-1" aria-label="Убрать">−</button><i id="q${i}">${C[i]||0}</i><button data-q="${i}" data-d="1" aria-label="Добавить">+</button></span></div>`});
+return h+`<div class="ft"><span id="mt">${cnt()?'Итого: '+fmt(tot()):'Выберите блюда'}</span><button class="btn g" data-t="cart">В КОРЗИНУ</button></div>`},
+table(){const ts=[];for(let h=18;h<23;h++)['00','30'].forEach(m=>ts.push(h+':'+m));
+return `<span class="lbl">NOIR RESTAURANT</span><div class="fm"><div class="g2"><label class="fl">ДАТА<input type="date" id="td" min="${iso(t0)}" value="${T?T.d:iso(new Date(+t0+864e5))}"></label><label class="fl">ВРЕМЯ<select id="tt">${ts.map(x=>`<option${T&&T.t==x?' selected':''}>${x}</option>`).join('')}</select></label></div><label class="fl">ГОСТЕЙ<select id="tg">${[1,2,3,4,5,6,7,8].map(x=>`<option${(T?T.g:2)==x?' selected':''}>${x}</option>`).join('')}</select></label><input id="tn" placeholder="ИМЯ И ФАМИЛИЯ" value="${T?esc(T.n):''}"><input id="th" type="tel" placeholder="НОМЕР ТЕЛЕФОНА" value="${T?esc(T.p):''}"></div><div class="err" id="te"></div><button class="btn g" id="tc" style="width:100%">ПОДТВЕРДИТЬ СТОЛИК</button><p style="font-size:12px;color:var(--mut)">Демонстрационное бронирование: оплата не требуется.</p>`},
+cart(){if(!cnt())return '<div class="note">Корзина пуста. Выберите блюда в меню.</div><p><button class="btn" data-t="menu">ПЕРЕЙТИ В МЕНЮ</button></p>';
+return Object.entries(C).map(([i,q])=>`<div class="dish"><span>${D[i][1]}</span><b>${fmt(D[i][2]*q)}</b><span class="qty"><button data-q="${i}" data-d="-1" aria-label="Убрать">−</button><i>${q}</i><button data-q="${i}" data-d="1" aria-label="Добавить">+</button></span></div>`).join('')+
+`<div class="sum" style="margin-top:22px"><div><span>Столик</span><span>${T?df(T.d)+', '+T.t+', гостей: '+T.g:'не выбран'}</span></div><div class="t"><span>ИТОГО</span><span>${fmt(tot())}</span></div></div>${T?'':'<div class="err">Сначала забронируйте столик: заказ подаётся к вашему времени.</div>'}<button class="btn g" id="pay" style="width:100%">${T?'ПЕРЕЙТИ К ОПЛАТЕ':'ВЫБРАТЬ СТОЛИК'}</button>`}};
+function tconf(){const v=id=>$(id).value.trim(),e=$('#te');
+if(v('#tn').split(/\s+/).length<2)return e.textContent='Укажите имя и фамилию.';
+if(dg(v('#th')).length<10)return e.textContent='Введите номер телефона, не меньше 10 цифр.';
+T={d:v('#td'),t:v('#tt'),g:v('#tg'),n:v('#tn'),p:v('#th')};
+$('#rb').innerHTML=`<div class="ok"><span class="lbl">NOIR RESTAURANT</span><h3>СТОЛИК ЗАБРОНИРОВАН</h3><p style="color:var(--mut)">${df(T.d)}, ${T.t}, гостей: ${T.g}<br>На имя: ${esc(T.n)}</p><div class="no">T-512</div><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><button class="btn g" data-t="menu">ВЫБРАТЬ БЛЮДА</button><button class="btn" id="ck3">ЗАКРЫТЬ</button></div></div>`;$('#ck3').onclick=close;wire('table')}
+function payv(){$('#rb').innerHTML=`<span class="lbl">ОПЛАТА</span><div class="cc"><span>NOIR PAY</span><span>${fmt(tot())}</span></div><div class="fm"><input id="cn" inputmode="numeric" placeholder="НОМЕР КАРТЫ" autocomplete="cc-number"><input id="ch" placeholder="ИМЯ НА КАРТЕ" autocomplete="cc-name"><div class="g2"><input id="ce" inputmode="numeric" placeholder="ММ/ГГ" autocomplete="cc-exp"><input id="cv" inputmode="numeric" type="password" placeholder="CVC" autocomplete="cc-csc"></div></div><div class="err" id="pe"></div><button class="btn g" id="go" style="width:100%">ОПЛАТИТЬ ${fmt(tot())}</button><p style="font-size:12px;color:var(--mut)">Демонстрация: реальные данные карты вводить не нужно, платёж не выполняется. Подойдёт любой номер, например 4242 4242 4242 4242.</p>`;
+$('#cn').oninput=e=>e.target.value=dg(e.target.value).slice(0,16).replace(/(.{4})/g,'$1 ').trim();
+$('#ce').oninput=e=>{const d=dg(e.target.value).slice(0,4);e.target.value=d.length>2?d.slice(0,2)+'/'+d.slice(2):d};
+$('#cv').oninput=e=>e.target.value=dg(e.target.value).slice(0,3);
+$('#go').onclick=()=>{const e=$('#pe'),n=dg($('#cn').value),m=+$('#ce').value.slice(0,2),y=2000+ +$('#ce').value.slice(3,5),now=new Date();
+if(n.length!=16)return e.textContent='Введите 16 цифр номера карты.';
+if($('#ch').value.trim().length<3)return e.textContent='Введите имя, как на карте.';
+if(!(m>=1&&m<=12)||$('#ce').value.length<5||y<now.getFullYear()||(y==now.getFullYear()&&m<now.getMonth()+1))return e.textContent='Проверьте срок действия карты: формат ММ/ГГ.';
+if($('#cv').value.length<3)return e.textContent='Введите 3 цифры CVC.';
+e.textContent='';$('#go').disabled=true;$('#go').textContent='ОБРАБОТКА ПЛАТЕЖА…';
+setTimeout(()=>{const it=Object.entries(C).map(([i,q])=>`<div><span>${D[i][1]} × ${q}</span><span>${fmt(D[i][2]*q)}</span></div>`).join(''),s=tot();C={};upd();
+$('#rb').innerHTML=`<div class="ok" style="max-width:none"><span class="lbl">NOIR RESTAURANT</span><h3>ЗАКАЗ ОПЛАЧЕН</h3><p style="color:var(--mut);margin:18px 0 0">Номер заказа:</p><div class="no">ORD-4096</div><div class="sum" style="text-align:left">${it}<div><span>Столик</span><span>${df(T.d)}, ${T.t}</span></div><div><span>Карта</span><span>•••• ${n.slice(-4)}</span></div><div class="t"><span>ИТОГО</span><span>${fmt(s)}</span></div></div><button class="btn" id="ck4">ЗАКРЫТЬ</button></div>`;$('#ck4').onclick=close},1400)}}
+const hd=$('#hd');addEventListener('scroll',()=>hd.classList.toggle('sc',scrollY>40),{passive:true});
+const bg=$('#bg'),mob=$('#mob');bg.onclick=()=>{bg.classList.toggle('o');mob.classList.toggle('o')};mob.querySelectorAll('a').forEach(a=>a.onclick=()=>{bg.classList.remove('o');mob.classList.remove('o')});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+const cu=$('#cur');addEventListener('mousemove',e=>{cu.style.left=e.clientX+'px';cu.style.top=e.clientY+'px';cu.classList.toggle('h',!!e.target.closest('a,button,.card,.gal .ph'))});
+</script>
+</body>
+</html>
+ats span{font-size:11px;letter-spacing:.2em;color:var(--mut)}
+@media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border:0}.stats div:nth-child(3){padding-left:0}}
+/* reviews */
+.rev{text-align:center;max-width:860px;margin:60px auto 0;min-height:260px}
+.rev q{display:block;font:300 clamp(24px,3.4vw,40px)/1.3 var(--serif);quotes:none;transition:opacity .4s}.rev .st{color:var(--gold);letter-spacing:6px;margin-bottom:22px}.rev p{color:var(--mut);margin-top:26px}
+.arr{display:flex;justify-content:center;gap:14px;margin-top:30px}.arr button{width:52px;height:52px;border-radius:50%;background:none;border:1px solid var(--line);cursor:pointer;transition:.3s}.arr button:hover{border-color:var(--gold);color:var(--gold)}
+/* map */
+.map{position:relative;height:420px;border:1px solid var(--line);margin:40px 0;background:#0f1012;overflow:hidden}.map svg{width:100%;height:100%}
+.pin{position:absolute;left:54%;top:46%;width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(184,154,94,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{to{box-shadow:0 0 0 30px transparent}}
+.fin{text-align:center;padding-block:clamp(110px,18vw,240px);background:radial-gradient(ellipse 50% 50% at 50% 100%,rgba(184,154,94,.2),transparent),var(--bg)}
+.fin h2{font-size:clamp(48px,9vw,130px)}.fin p{color:var(--mut);margin:26px 0 40px}
+footer{border-top:1px solid var(--line);padding:60px clamp(20px,5vw,72px) 40px}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;font-size:12px;letter-spacing:.16em;color:var(--mut)}footer a:hover{color:var(--gold)}footer .c{display:flex;gap:24px;flex-wrap:wrap}
+footer .wrap{align-items:center}footer a.tg{display:inline-flex;align-items:center;gap:14px;padding:20px 36px;font-size:12px;letter-spacing:.2em;font-weight:500;color:#0a0a0b;border-radius:4px;background:linear-gradient(180deg,#d8bb7c,#b89a5e 55%,#9a7d45);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(0,0,0,.18),0 5px 0 #6f5a2c,0 16px 34px rgba(184,154,94,.28);transition:transform .2s,box-shadow .2s}
+footer a.tg:hover{color:#0a0a0b;transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(0,0,0,.18),0 7px 0 #6f5a2c,0 22px 40px rgba(184,154,94,.34)}
+footer a.tg:active{transform:translateY(4px);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 1px 0 #6f5a2c,0 6px 14px rgba(184,154,94,.2)}
+@media(max-width:560px){footer a.tg{width:100%;justify-content:center;padding:20px 16px}}
+/* modal */
+.md{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:20px;overflow-y:auto}.md.o{display:flex;animation:fade2 .4s}
+@keyframes fade2{from{opacity:0}}
+.dlg{background:var(--panel);border:1px solid var(--line);max-width:960px;width:100%;position:relative;margin:auto;animation:pop .5s cubic-bezier(.2,.8,.2,1)}@keyframes pop{from{transform:translateY(30px);opacity:0}}
+.x{position:absolute;top:14px;right:16px;z-index:5;background:rgba(0,0,0,.5);border:1px solid var(--line);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px}.x:hover{border-color:var(--gold)}
+.dlg .pics{display:grid;grid-template-columns:2fr 1fr;gap:4px;height:300px}.dlg .pics .ph:first-child{grid-row:span 2}
+.dlg .bd{padding:clamp(22px,4vw,48px);display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+.dlg{min-width:0;overflow:hidden}.dlg .bd>*{min-width:0}.am li{gap:16px;flex-wrap:wrap}.am li span{text-align:right;margin-left:auto}
+@media(max-width:760px){.dlg .bd{grid-template-columns:minmax(0,1fr);gap:28px}.dlg .pics{height:220px}.dlg h3{font-size:36px}.dlg .btn{width:100%;text-align:center;white-space:normal}.md{padding:12px}}
+.dlg h3{font-size:44px;margin-bottom:14px}.am{list-style:none;padding:0;margin:0;display:grid;gap:0}.am li{padding:11px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;font-size:14px}.am span{color:var(--mut)}
+.pp{font:400 34px var(--serif);margin:10px 0 20px}
+.lb{background:rgba(0,0,0,.95)}.lb .big{width:min(92vw,1100px);height:min(78vh,720px)}
+.fm{display:grid;gap:12px;margin:18px 0}.fm input{background:#0d0d0f;border:1px solid var(--line);padding:14px 16px}.fm input:focus{border-color:var(--gold);outline:0}.err{color:#d98a8a;font-size:13px;min-height:20px}
+.sum{border:1px solid var(--line);padding:20px;margin:18px 0;font-size:15px}.sum div{display:flex;justify-content:space-between;padding:5px 0}.sum .t{border-top:1px solid var(--line);margin-top:8px;padding-top:12px;color:var(--gold);font:400 26px var(--serif)}
+.ok{padding:clamp(30px,5vw,60px);text-align:center;max-width:560px;margin:auto}.ok h3{font-size:clamp(34px,5vw,54px)}.ok .no{font:400 30px var(--serif);color:var(--gold);margin:12px 0 24px}
+.tabs{display:flex;border-bottom:1px solid var(--line);padding-right:70px;overflow-x:auto}.tabs button{background:none;border:0;padding:20px 22px;font-size:11px;letter-spacing:.18em;cursor:pointer;color:var(--mut);border-bottom:1px solid transparent;white-space:nowrap}.tabs .a{color:var(--tx);border-color:var(--gold)}
+.rb{padding:clamp(20px,4vw,44px)}.rb h4{font:400 28px var(--serif);margin:26px 0 6px;color:var(--gold)}.rb h4:first-child{margin-top:0}
+.dish{display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.dish b{font:400 20px var(--serif)}
+.qty{display:flex;align-items:center;gap:10px}.qty button{width:34px;height:34px;border-radius:50%;background:none;border:1px solid var(--line);cursor:pointer}.qty button:hover{border-color:var(--gold)}.qty i{min-width:18px;text-align:center;font-style:normal}
+.ft{position:sticky;bottom:0;background:var(--panel);display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 0 0;margin-top:20px;border-top:1px solid var(--line)}
+.fl{font-size:11px;letter-spacing:.18em;color:var(--mut);display:grid;gap:6px}.fm select{background:#0d0d0f;border:1px solid var(--line);padding:14px 16px;color-scheme:dark}.fm input[type=date]{color-scheme:dark}.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cbtn{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;display:none;background:var(--gold);color:#000;border:0;padding:15px 22px;font-size:11px;letter-spacing:.16em;cursor:pointer;transition:.3s}.cbtn:hover{background:var(--tx)}
+.cc{background:linear-gradient(135deg,#26262b,#0e0e10);border:1px solid var(--line);padding:20px;margin-bottom:14px;font:400 20px var(--serif);letter-spacing:.12em;display:flex;justify-content:space-between}
+@media(max-width:560px){.dish{grid-template-columns:1fr auto}.dish .qty{grid-column:1/-1}.g2{grid-template-columns:1fr}}
+/* reveal + cursor */
+.rv{opacity:0;transform:translateY(34px);transition:1s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+#cur{position:fixed;width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;z-index:200;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s;display:none}
+#cur.h{width:64px;height:64px;background:rgba(184,154,94,.12)}
+@media(hover:hover) and (pointer:fine){#cur{display:block}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.hero p,.hero .cta{opacity:1;transform:none}.hero h1 b{transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
